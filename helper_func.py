@@ -77,6 +77,69 @@ async def is_subscribed4(filter, client, update):
         return False
     else:
         return True
+async def is_subscribed5(filter, client, update):
+    if not FORCE_SUB_CHANNEL5:
+        return True
+    user_id = update.from_user.id
+    if user_id in ADMINS:
+        return True
+    try:
+        member = await client.get_chat_member(chat_id = FORCE_SUB_CHANNEL5, user_id = user_id)
+    except UserNotParticipant:
+        return False
+
+    if not member.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.MEMBER]:
+        return False
+    else:
+        return True
+
+async def is_subscribed6(filter, client, update):
+    if not FORCE_SUB_CHANNEL6:
+        return True
+    user_id = update.from_user.id
+    if user_id in ADMINS:
+        return True
+    try:
+        member = await client.get_chat_member(chat_id = FORCE_SUB_CHANNEL6, user_id = user_id)
+    except UserNotParticipant:
+        return False
+
+    if not member.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.MEMBER]:
+        return False
+    else:
+        return True
+
+async def is_subscribed7(filter, client, update):
+    if not FORCE_SUB_CHANNEL7:
+        return True
+    user_id = update.from_user.id
+    if user_id in ADMINS:
+        return True
+    try:
+        member = await client.get_chat_member(chat_id = FORCE_SUB_CHANNEL7, user_id = user_id)
+    except UserNotParticipant:
+        return False
+
+    if not member.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.MEMBER]:
+        return False
+    else:
+        return True
+
+async def is_subscribed8(filter, client, update):
+    if not FORCE_SUB_CHANNEL8:
+        return True
+    user_id = update.from_user.id
+    if user_id in ADMINS:
+        return True
+    try:
+        member = await client.get_chat_member(chat_id = FORCE_SUB_CHANNEL8, user_id = user_id)
+    except UserNotParticipant:
+        return False
+
+    if not member.status in [ChatMemberStatus.OWNER, ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.MEMBER]:
+        return False
+    else:
+        return True   
 
 
 async def encode(string):
@@ -192,4 +255,7 @@ subscribed1 = filters.create(is_subscribed1)
 subscribed2 = filters.create(is_subscribed2)
 subscribed3 = filters.create(is_subscribed3)
 subscribed4 = filters.create(is_subscribed4)
-
+subscribed5 = filters.create(is_subscribed5)
+subscribed6 = filters.create(is_subscribed6)
+subscribed7 = filters.create(is_subscribed7)
+subscribed8 = filters.create(is_subscribed8)
