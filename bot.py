@@ -86,6 +86,58 @@ class Bot(Client):
                 self.LOGGER(__name__).warning(f"Please Double check the FORCE_SUB_CHANNEL4 value and Make sure Bot is Admin in channel with Invite Users via Link Permission, Current Force Sub Channel Value: {FORCE_SUB_CHANNEL4}")
                 self.LOGGER(__name__).info("\nBot Stopped. https://t.me/Stelleron_Hunter for support")
                 sys.exit()
+        if FORCE_SUB_CHANNEL5:
+            try:
+                link = (await self.get_chat(FORCE_SUB_CHANNEL1)).invite_link
+                if not link:
+                    await self.export_chat_invite_link(FORCE_SUB_CHANNEL5)
+                    link = (await self.get_chat(FORCE_SUB_CHANNEL5)).invite_link
+                self.invitelink5 = link
+            except Exception as a:
+                self.LOGGER(__name__).warning(a)
+                self.LOGGER(__name__).warning("Bot can't Export Invite link from Force Sub Channel!")
+                self.LOGGER(__name__).warning(f"Please Double check the FORCE_SUB_CHANNEL5 value and Make sure Bot is Admin in channel with Invite Users via Link Permission, Current Force Sub Channel Value: {FORCE_SUB_CHANNEL5}")
+                self.LOGGER(__name__).info("\nBot Stopped. https://t.me/Stelleron_Hunter for support")
+                sys.exit()
+        if FORCE_SUB_CHANNEL6:
+            try:
+                link = (await self.get_chat(FORCE_SUB_CHANNEL6)).invite_link
+                if not link:
+                    await self.export_chat_invite_link(FORCE_SUB_CHANNEL6)
+                    link = (await self.get_chat(FORCE_SUB_CHANNEL6)).invite_link
+                self.invitelink6 = link
+            except Exception as a:
+                self.LOGGER(__name__).warning(a)
+                self.LOGGER(__name__).warning("Bot can't Export Invite link from Force Sub Channel!")
+                self.LOGGER(__name__).warning(f"Please Double check the FORCE_SUB_CHANNEL6 value and Make sure Bot is Admin in channel with Invite Users via Link Permission, Current Force Sub Channel Value: {FORCE_SUB_CHANNEL6}")
+                self.LOGGER(__name__).info("\nBot Stopped. https://t.me/Stelleron_Hunter for support")
+                sys.exit()
+        if FORCE_SUB_CHANNEL7:
+            try:
+                link = (await self.get_chat(FORCE_SUB_CHANNEL7)).invite_link
+                if not link:
+                    await self.export_chat_invite_link(FORCE_SUB_CHANNEL7)
+                    link = (await self.get_chat(FORCE_SUB_CHANNEL7)).invite_link
+                self.invitelink7 = link
+            except Exception as a:
+                self.LOGGER(__name__).warning(a)
+                self.LOGGER(__name__).warning("Bot can't Export Invite link from Force Sub Channel!")
+                self.LOGGER(__name__).warning(f"Please Double check the FORCE_SUB_CHANNEL7 value and Make sure Bot is Admin in channel with Invite Users via Link Permission, Current Force Sub Channel Value: {FORCE_SUB_CHANNEL7}")
+                self.LOGGER(__name__).info("\nBot Stopped. https://t.me/Stelleron_Hunter for support")
+                sys.exit()
+        if FORCE_SUB_CHANNEL8:
+            try:
+                link = (await self.get_chat(FORCE_SUB_CHANNEL8)).invite_link
+                if not link:
+                    await self.export_chat_invite_link(FORCE_SUB_CHANNEL8)
+                    link = (await self.get_chat(FORCE_SUB_CHANNEL8)).invite_link
+                self.invitelink8 = link
+            except Exception as a:
+                self.LOGGER(__name__).warning(a)
+                self.LOGGER(__name__).warning("Bot can't Export Invite link from Force Sub Channel!")
+                self.LOGGER(__name__).warning(f"Please Double check the FORCE_SUB_CHANNEL8 value and Make sure Bot is Admin in channel with Invite Users via Link Permission, Current Force Sub Channel Value: {FORCE_SUB_CHANNEL8}")
+                self.LOGGER(__name__).info("\nBot Stopped. https://t.me/Stelleron_Hunter for support")
+                sys.exit()             
         try:
             db_channel = await self.get_chat(CHANNEL_ID)
             self.db_channel = db_channel
