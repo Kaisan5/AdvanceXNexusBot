@@ -67,7 +67,7 @@ async def start_command(client: Client, message: Message):
                 btn = [
                     [InlineKeyboardButton("• ᴏᴘᴇɴ ʟɪɴᴋ •", url=link)], 
                     [InlineKeyboardButton('• ᴛᴜᴛᴏʀɪᴀʟ •', url=TUT_VID)]#,
-                    #[InlineKeyboardButton('• ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ •', callback_data='premium')]
+                    [InlineKeyboardButton('• ʙᴜʏ ᴘʀᴇᴍɪᴜᴍ •', callback_data='premium')]
                 ]
                 return await message.reply(
                     f"<b><blockquote>𝗬𝗼𝘂𝗿 𝘁𝗼𝗸𝗲𝗻 𝗵𝗮𝘀 𝗲𝘅𝗽𝗶𝗿𝗲𝗱. 𝗣𝗹𝗲𝗮𝘀𝗲 𝗿𝗲𝗳𝗿𝗲𝘀𝗵 𝘆𝗼𝘂𝗿 𝘁𝗼𝗸𝗲𝗻 𝘁𝗼 𝗰𝗼𝗻𝘁𝗶𝗻𝘂𝗲.. @Stelleron_Hunter\n\n<b>Tᴏᴋᴇɴ Tɪᴍᴇᴏᴜᴛ:</b> {get_exp_time(VERIFY_EXPIRE)}\n\n<b>ᴡʜᴀᴛ ɪs ᴛʜᴇ ᴛᴏᴋᴇɴ??</b>\n\nᴛʜɪs ɪs ᴀɴ ᴀᴅs ᴛᴏᴋᴇɴ. ᴘᴀssɪɴɢ ᴏɴᴇ ᴀᴅ ᴀʟʟᴏᴡs ʏᴏᴜ ᴛᴏ ᴜsᴇ ᴛʜᴇ ʙᴏᴛ ғᴏʀ {get_exp_time(VERIFY_EXPIRE)}</blockquote></b>",
@@ -234,6 +234,38 @@ async def not_joined(client: Client, message: Message):
         buttons.append([
             InlineKeyboardButton(text="• Jᴏɪɴ Cʜᴀɴɴᴇʟ •", url=client.invitelink4)
         ])
+    # Check if the first and second channels are both set
+    if FORCE_SUB_CHANNEL5 and FORCE_SUB_CHANNEL6:
+        buttons.append([
+            InlineKeyboardButton(text="• Jᴏɪɴ Cʜᴀɴɴᴇʟ", url=client.invitelink1),
+            InlineKeyboardButton(text="Jᴏɪɴ Cʜᴀɴɴᴇʟ •", url=client.invitelink2),
+        ])
+    # Check if only the first channel is set
+    elif FORCE_SUB_CHANNEL5:
+        buttons.append([
+            InlineKeyboardButton(text="• Jᴏɪɴ Cʜᴀɴɴᴇʟ •", url=client.invitelink1)
+        ])
+    # Check if only the second channel is set
+    elif FORCE_SUB_CHANNEL6:
+        buttons.append([
+            InlineKeyboardButton(text="• Jᴏɪɴ Cʜᴀɴɴᴇʟ •", url=client.invitelink2)
+        ])
+    # Check if the first and second channels are both set    
+    if FORCE_SUB_CHANNEL7 and FORCE_SUB_CHANNEL8:
+        buttons.append([
+            InlineKeyboardButton(text="• Jᴏɪɴ Cʜᴀɴɴᴇʟ", url=client.invitelink1),
+            InlineKeyboardButton(text="Jᴏɪɴ Cʜᴀɴɴᴇʟ •", url=client.invitelink2),
+        ])
+    # Check if only the first channel is set
+    elif FORCE_SUB_CHANNEL7:
+        buttons.append([
+            InlineKeyboardButton(text="• Jᴏɪɴ Cʜᴀɴɴᴇʟ •", url=client.invitelink1)
+        ])
+    # Check if only the second channel is set
+    elif FORCE_SUB_CHANNEL8:
+        buttons.append([
+            InlineKeyboardButton(text="• Jᴏɪɴ Cʜᴀɴɴᴇʟ •", url=client.invitelink2)
+        ]) 
 
     # Append "Try Again" button if the command has a second argument
     try:
